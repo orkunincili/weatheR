@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{weather.city}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/weather.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+        <div class="form-container">
+            <p>What's the weather like?</p>
+            <div id="city-form">
+                 <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {{form}}
+                     <button class="material-icons" type="submit">search</button>
+
+                 </form>
+            </div>
+
+            <h1 class="city">{{weather.city}}</h1>
+
+        </div>
+        </div>
+
+        <div class="container">
+             <div class="row">
+        {%for result in weather.results%}
+
+
+                <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <div class="header">
+                    <h2 class="card-title">{{result.degree}}</h2>
+                    <img class="icon" src="{{result.icon}}" alt="icon">
+                </div>
+                <h5 class="card-subtitle mb-2 text-muted">{{result.date}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{result.day}}</h6>
+                <p class="card-text">{{result.description}}</p>
+
+              </div>
+            </div>
+
+        {%endfor%}
+                 </div>
+             </div>
+</body>
+</html>

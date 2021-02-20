@@ -1,0 +1,54 @@
+.form-container{
+    background:#0066cc;
+    padding:100px;
+}
+.form-container p{
+    color:white;
+    font-size:50px;
+    text-align:center;
+
+}
+
+#city-form{
+
+    position:relative;
+    width:30%;
+    margin:auto;
+}
+#city-form form{
+    display:flex;
+    flex-direction:column;
+
+}
+.city{
+    position:relative;
+    bottom:-100px;
+    color:white;
+    text-align:center;
+}
+#find{
+    background:#0066cc;
+    color:white;
+    border:1px solid #003366;
+    margin-top:20px;
+}
+.material-icons{
+    color:white;
+    width:30%;
+    background:#0066cc;
+    border:none;
+    margin:auto;
+    font-size:50px;
+}
+.card{
+    margin:20px;
+}
+.header{
+    display:flex;
+    justify-content:space-between;
+}
+.icon{
+    width:30%;
+    max-width:200px;
+    height:auto;
+}
