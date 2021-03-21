@@ -3,7 +3,7 @@ import http.client,json
 
 class Weat:
     connection="api.collectapi.com"
-    api_key = "7pWscfZvQUT4Mg1xdChzXu:2OMTXkdUKTKBYwbqzQhvXG"
+    api_key = ""
     path="/weather/getWeather?data.lang=en&data.city="
     headers = {
         'content-type': "application/json",
